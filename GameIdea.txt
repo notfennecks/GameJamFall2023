@@ -1,0 +1,7 @@
+Theme: Narcissism
+
+Concept: You are trapped in a dream-like world which reflects your narcissistic self. You must survive waves of enemies(negatives aspects of narcissism) and overcome your exaggerated self image.
+
+Mechanics: You must survive waves of progressing harder enemies. After each wave you are prompted with an adventure style dialodge decisison if you take the narcisistic answer you are debuffed according but if you answer "correctly" you gain a buff. Goal is to reach 10 waves.
+
+
