@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpe2oydl3n57b"]
+
+[ext_resource type="Script" path="res://WorldState.gd" id="1_go4le"]
+[ext_resource type="PackedScene" uid="uid://dxombrwyroes2" path="res://Player.tscn" id="2_5dmp3"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_pukdg"]
+a = Vector2(-632, 6)
+b = Vector2(649, 6)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xffth"]
+a = Vector2(-1, 0)
+b = Vector2(-1, 720)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_b71xx"]
+a = Vector2(1281, 0)
+b = Vector2(1281, 720)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_go4le")
+
+[node name="WorldBorders" type="StaticBody2D" parent="."]
+disable_mode = 2
+collision_layer = 4
+collision_mask = 3
+
+[node name="Top" type="CollisionShape2D" parent="WorldBorders"]
+position = Vector2(637.25, -5)
+shape = SubResource("SegmentShape2D_pukdg")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Bottom" type="CollisionShape2D" parent="WorldBorders"]
+position = Vector2(632, 715)
+shape = SubResource("SegmentShape2D_pukdg")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Left" type="CollisionShape2D" parent="WorldBorders"]
+shape = SubResource("SegmentShape2D_xffth")
+
+[node name="Right" type="CollisionShape2D" parent="WorldBorders"]
+shape = SubResource("SegmentShape2D_b71xx")
+
+[node name="Player" parent="." instance=ExtResource("2_5dmp3")]
+position = Vector2(640, 360)

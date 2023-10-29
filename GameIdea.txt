@@ -4,4 +4,53 @@ Concept: You are trapped in a dream-like world which reflects your narcissistic 
 
 Mechanics: You must survive waves of progressing harder enemies. After each wave you are prompted with an adventure style dialodge decisison if you take the narcisistic answer you are debuffed according but if you answer "correctly" you gain a buff. Goal is to reach 10 waves.
 
+"""
+Reflections of Vanity
 
+Prompt 1: You encounter a shy child-like mirror. They ask you if you could help get their kite in a tree.
+It is obvious you will hurt yourself in the process of getting the kite and will receive nothing in return.
+Option 1: (+) Help her get the kite but sacrifice some health.
+	- Passive Health Regen (Healing Aura) ("You helped her get her kite and lost some health but gained a passive health regen")
+Option 2: (-) Ignore her kite and keep your health.
+	- Decreased Speed But Slightly More Damage ("Your lack of empathy caused a slight decrease in speed, but you do more damage")
+	
+Prompt 2: A group of mirrors approach you and try to talk to you about video games. You are debating talking to them as its obvious they only want to talk.
+Option 1: (+) Talk to them anyways as they seem like nice kids.
+	- Increased speed ("You can be around anyone regardless of what they can do for you, you gain extra speed")
+Option 2: (-) Ignore them as they it doesn't benefit you in any way talking to them.
+	- Increased Health but increased Size (bigger hitbox) ("Your over exagerrated self-importance gave your more health but you are easier to hit")
+	
+Prompt 3: You see a bunch of mirrors gathering around a lost dog-like mirror. You remember seeing a reward poster for finding the dog. 
+Option 1: (+) You tell the group of the lost dog poster and help get them back safety but deny the reward money. As you only care about getting it home safely.
+	- Ranged attack has 3 projectiles ("Your care about others without reward to gain allows you to combat malicious mirros for affectively. You can fire 3 projectiles.")
+Option 2: (-) You tell the group about the lost dog poster but demand all the money as you told them about the reward.
+	-  Attack faster but lose FOV ("You feel entilted to gain all the money. You become very hostile and attack faster, but lose field of view")
+	
+Prompt 4:  You walk by a group of pranksters. They procceed to make jokes about you as you pass by.
+Option 1: (+) You understand they are just being fun and mean no harm. Pass on by silently.
+	-Melee attacks push back ("You understand when people are just having fun. You are able to push back malicious mirrors who get too close.")
+Option 2: (-) You get very upset and beging to argue violently back at them.
+	-Small healh on kill but passive health decay ("You need people to valid your own worth, you lose health constantly and need to destroy mirrors to gain it back")
+	
+
+*** 4 Waves(4 Levels) ***
+#4 Different Beneficial Abilities(always positive) +
+- Passive Health Regen (Healing Aura) ("You helped others and now passively regain health")
+- Increased speed ("You can be around anyone regardless of what they can do for you, you gain extra speed")
+- Ranged attack ("Your care about others without reward to gain allows you to combat malicious mirrors more affectively. You can fire projectiles.")
+- Melee attacks push back ("You understand when people are just having fun. You are able to push back malicious mirrors who get too close.")
+
+#4 Differente Narcisitic Abilities (affects give one but take another) + but -
+- Decreased Speed But Slightly More Damage ("Your arrogance caused you to move slower, but increases your strength)
+- Increased Health but increased Size (bigger hitbox) ("Your over exagerrated self-importance gave your more health but you are easier to hit")
+- Attack fast but lose FOV ("You feel entilted to gain all the money. You become very hostile and attack faster, but lose field of view")
+- Small healh on kill but passive health decay ("You need people to valid your own worth, you lose health constanyl and need to destroy mirrors to gain it back")
+
+#4 Different Enemies Malicious Mirrors
+-Melee (Medium Dmg): Work Problems - Fire Spirit (Orange)
+-Ranged (Low Dmg): Mental Illnesses - Blood Spirit (Red)
+-Fast Melee (Low Dmg): Physical Health Problems - Poisen Spirit (Green)
+-Slow Brute (High Dmg): Drug Abuse - Darkness Spirit (Purple)
+
+???Endless mode after 4 waves completed???
+"""

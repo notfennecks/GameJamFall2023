@@ -1,0 +1,146 @@
+[gd_scene load_steps=9 format=3 uid="uid://bpe2oydl3n57b"]
+
+[ext_resource type="Script" path="res://WorldState.gd" id="1_go4le"]
+[ext_resource type="Texture2D" uid="uid://bxwaxor3xucvg" path="res://Art/Night Sky.png" id="2_0osh7"]
+[ext_resource type="PackedScene" uid="uid://dxombrwyroes2" path="res://Player.tscn" id="2_5dmp3"]
+[ext_resource type="PackedScene" uid="uid://c5704dvnvlejx" path="res://UI.tscn" id="3_n85jy"]
+[ext_resource type="PackedScene" uid="uid://b4wq1eiwjr0r5" path="res://PauseMenu.tscn" id="5_ovf5l"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_pukdg"]
+a = Vector2(-637.25, 4)
+b = Vector2(649, 6)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xffth"]
+a = Vector2(-1, 0)
+b = Vector2(-1, 720)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_b71xx"]
+a = Vector2(1281, 0)
+b = Vector2(1281, 720)
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("level_label")]
+position = Vector2(-1, -13)
+script = ExtResource("1_go4le")
+level_label = NodePath("UI/Control/MarginContainer/VBoxContainer/HBoxContainer/Level-Wave")
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_ovf5l")]
+visible = false
+top_level = true
+offset_left = 522.0
+offset_top = 240.0
+offset_right = -758.0
+offset_bottom = -480.0
+scale = Vector2(2.22189, 2.52657)
+
+[node name="WorldBorders" type="StaticBody2D" parent="."]
+disable_mode = 2
+collision_layer = 4
+collision_mask = 3
+metadata/_edit_lock_ = true
+
+[node name="Top" type="CollisionShape2D" parent="WorldBorders"]
+position = Vector2(637.25, -5)
+shape = SubResource("SegmentShape2D_pukdg")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+metadata/_edit_lock_ = true
+
+[node name="Bottom" type="CollisionShape2D" parent="WorldBorders"]
+position = Vector2(632, 715)
+shape = SubResource("SegmentShape2D_pukdg")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+metadata/_edit_lock_ = true
+
+[node name="Left" type="CollisionShape2D" parent="WorldBorders"]
+shape = SubResource("SegmentShape2D_xffth")
+metadata/_edit_lock_ = true
+
+[node name="Right" type="CollisionShape2D" parent="WorldBorders"]
+shape = SubResource("SegmentShape2D_b71xx")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="WorldBorders"]
+position = Vector2(649, 131)
+rotation = 3.14159
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("2_0osh7")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="WorldBorders"]
+position = Vector2(649, 641.31)
+rotation = 3.14159
+scale = Vector2(2.6, -2.6)
+texture = ExtResource("2_0osh7")
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("2_5dmp3")]
+position = Vector2(640, 360)
+
+[node name="SpawnLocations" type="Node2D" parent="."]
+
+[node name="1" type="Node2D" parent="SpawnLocations"]
+position = Vector2(90, 63)
+
+[node name="2" type="Node2D" parent="SpawnLocations"]
+position = Vector2(63, 207)
+
+[node name="3" type="Node2D" parent="SpawnLocations"]
+position = Vector2(95, 458)
+
+[node name="4" type="Node2D" parent="SpawnLocations"]
+position = Vector2(158, 626)
+
+[node name="5" type="Node2D" parent="SpawnLocations"]
+position = Vector2(428, 626)
+
+[node name="6" type="Node2D" parent="SpawnLocations"]
+position = Vector2(756, 677)
+
+[node name="7" type="Node2D" parent="SpawnLocations"]
+position = Vector2(1023, 646)
+
+[node name="8" type="Node2D" parent="SpawnLocations"]
+position = Vector2(1180, 626)
+
+[node name="9" type="Node2D" parent="SpawnLocations"]
+position = Vector2(1170, 446)
+
+[node name="10" type="Node2D" parent="SpawnLocations"]
+position = Vector2(1222, 280)
+
+[node name="11" type="Node2D" parent="SpawnLocations"]
+position = Vector2(1152, 103)
+
+[node name="12" type="Node2D" parent="SpawnLocations"]
+position = Vector2(944, 67)
+
+[node name="13" type="Node2D" parent="SpawnLocations"]
+position = Vector2(803, 86)
+
+[node name="14" type="Node2D" parent="SpawnLocations"]
+position = Vector2(608, 82)
+
+[node name="15" type="Node2D" parent="SpawnLocations"]
+position = Vector2(436, 64)
+
+[node name="16" type="Node2D" parent="SpawnLocations"]
+position = Vector2(252, 76)
+
+[node name="UI" parent="." instance=ExtResource("3_n85jy")]
+
+[node name="Level-Wave" parent="UI/Control/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
+text = "0-0"
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(640, 360)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[node name="EndlessTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="EndlessTimer" to="." method="_on_endless_timer_timeout"]
+
+[editable path="UI"]

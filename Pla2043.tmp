@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxombrwyroes2"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_cgeaa"]
+[ext_resource type="Texture2D" uid="uid://b7o8dxc751shr" path="res://icon.svg" id="2_l1nq5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_um6ht"]
+size = Vector2(129, 127)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tdgke"]
+radius = 362.932
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_cgeaa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("2_l1nq5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_um6ht")
+
+[node name="EnemySpawnPerimeter" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemySpawnPerimeter"]
+shape = SubResource("CircleShape2D_tdgke")
+disabled = true
